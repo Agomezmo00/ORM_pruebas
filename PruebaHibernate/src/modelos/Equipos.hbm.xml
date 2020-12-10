@@ -11,5 +11,16 @@
 		<key column="nombre_equipo"  not-null="true" />
 		<one-to-many class="modelos.Jugadores"/>
 	</set>
+	
+	<set name="partidosLocal" cascade="all" inverse="true" lazy="false">
+		<key column="equipo_local" not-null="true" />
+		<one-to-many class="modelos.Equipos" />
+	</set>
+	
+	<set name="partidosVisitante" cascade="all" inverse="true" lazy="false">
+		<key column="equipo_visitante" not-null="true" />
+		<one-to-many class="modelos.Equipos" />
+	</set>
+	
    </class>
 </hibernate-mapping>

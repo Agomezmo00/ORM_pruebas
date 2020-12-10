@@ -11,7 +11,29 @@ public class Equipos implements Serializable {
 	public String ciudad;
 	public String division;
 	public Set<Jugadores> jugadores;
+	public Set<Partidos> partidosLocal;
+	public Set<Partidos> partidosVisitante;
 	
+	public Set<Partidos> getPartidosVisitante() {
+		return partidosVisitante;
+	}
+
+
+	public void setPartidosVisitante(Set<Partidos> partidosVisitante) {
+		this.partidosVisitante = partidosVisitante;
+	}
+
+
+	public Set<Partidos> getPartidosLocal() {
+		return partidosLocal;
+	}
+
+
+	public void setPartidosLocal(Set<Partidos> partidosLocal) {
+		this.partidosLocal = partidosLocal;
+	}
+
+
 	public Set<Jugadores> getJugadores() {
 		return jugadores;
 	}

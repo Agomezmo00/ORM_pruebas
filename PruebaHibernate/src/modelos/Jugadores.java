@@ -71,7 +71,8 @@ public class Jugadores implements Serializable {
 	@Override
 	public String toString() {
 		
-		return nombre+" - ("+ posicion+") - "+ procedencia +" - ("+peso +" lbs) - "+altura+" ft. in.";
+		String nb_equipo = equipo.getNombre();
+		return nombre+" - ("+ posicion+") - "+ procedencia +" - ("+peso +" lbs) - "+altura+" ft. in. juega en:"+nb_equipo;
 		
 	}
 

@@ -25,6 +25,7 @@
 		<property name="current_session_context_class">thread</property>
 		<mapping resource="modelos/Equipos.hbm.xml"/>
 		<mapping resource="modelos/Jugadores.hbm.xml"/>
+		<mapping resource="modelos/Partidos.hbm.xml"/>
  
     </session-factory>
 
