@@ -30,14 +30,15 @@ public class ClienteHibernate {
 		//Generamos la Session a partir del SessionFactory que tenemos en HibernateUtil
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		
-		//Una vez con la session creada, podemos hacer operaciones que van englobadas dentro de una transacción
+		//Una vez con la session creada, podemos hacer operaciones que van englobadas dentro de una transacciï¿½n
 		session.beginTransaction();
 		
 		//Crea un objeto consulta
-		List<Equipos> result = (List<Equipos>)session.createQuery("from Equipos WHERE Nombre LIKE 'L%'").list();
+		List<Equipos> result = (List<Equipos>)session.createQuery("from Equipos where nombre like 'L%'").list();
 		
-		//Finaliza la transacción con commit
+		//Finaliza la transacciï¿½n con commit
 		session.getTransaction().commit();
+		
 		for(Equipos equipo: result) {
 			System.out.println("Equipo: "+equipo.toString());
 			System.out.println("************El Plantel****************");
@@ -64,12 +65,14 @@ public class ClienteHibernate {
 	private List<Partidos> listarPartidos(){
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
+		
 		List<Partidos> result = (List<Partidos>)session.createQuery("from Partidos WHERE temporada = '07/08' and equipo_local='Lakers'").list();
+		
 		session.getTransaction().commit();
 		for(Partidos p: result) {
-			//System.out.println("partidos: "+p.toString());
+			
 			if(p.getPuntos_visitante() > p.getPuntos_local()) {
-				System.out.println("Equipo ganador: "+p.getVisitante().getNombre());			
+				System.out.println(p.getVisitante().getNombre());			
 				}
 			
 		}

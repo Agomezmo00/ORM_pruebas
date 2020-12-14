@@ -14,12 +14,12 @@
 	
 	<set name="partidosLocal" cascade="all" inverse="true" lazy="false">
 		<key column="equipo_local" not-null="true" />
-		<one-to-many class="modelos.Equipos" />
+		<one-to-many class="modelos.Partidos" />
 	</set>
 	
 	<set name="partidosVisitante" cascade="all" inverse="true" lazy="false">
 		<key column="equipo_visitante" not-null="true" />
-		<one-to-many class="modelos.Equipos" />
+		<one-to-many class="modelos.Partidos" />
 	</set>
 	
    </class>

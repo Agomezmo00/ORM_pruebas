@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Session;
+
+import utiles.HibernateUtil;
+
 public class Equipos implements Serializable {
 	
 	public String nombre;
@@ -98,8 +102,15 @@ public class Equipos implements Serializable {
 	@Override
 	public String toString() {
 		
-		return "Nombre: "+nombre+" Conferencia: "+conferencia+" Ciudad: "+ciudad+" División:"+division;
+		return "Nombre: "+nombre+" Conferencia: "+conferencia+" Ciudad: "+ciudad+" Divisiï¿½n:"+division;
 	}
 	
+	public Equipos datosEquipo(String nombre) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		session.createQuery("FROM equipos WHERE nombre ="+nombre);
+		return this;
+		
+	}
 
 }
